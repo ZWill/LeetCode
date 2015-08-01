@@ -1,0 +1,24 @@
+#include <vector>
+
+class Solution{
+public:
+	void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
+		int an = m-1; int bn = n-1; int abn = m + n - 1;
+		for (int it = 0; it != n; it++)
+		{
+			nums1.push_back(1);
+		}
+		while (an >= 0 && bn >= 0)
+		{
+			
+			nums1[abn--] = nums1[an] >= nums2[bn] ? nums1[an--] : nums2[bn--];
+
+		}
+		while (bn >= 0) 
+		{
+			nums1[abn--] = nums2[bn--];
+		}
+
+	}
+};
+
